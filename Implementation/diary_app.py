@@ -26,3 +26,12 @@ class Diary:
                 return
         print(f"No entry found with date {entry_date} ")
 
+    def delete_entry(self):
+        entry_date = input("Enter the date of the entry you want to delete: ")
+        for entry in self.entries:
+            if entry['date'] == entry_date:
+                self.entries.remove(entry)
+                print(f"Entry {entry_date} has been deleted")
+                return
+        print(f"No entry found with date {entry_date}")
+
