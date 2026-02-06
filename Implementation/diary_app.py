@@ -42,3 +42,38 @@ class Diary:
                 file.write(f"Title: {entry['content']}\n")
                 file.write("\n")
 
+    def run(self):
+
+        while True:
+            print("\nSimple Diary Application Menu: " )
+            print("1. Create Entry")
+            print("2. View Entry")
+            print("3. Edit Entry")
+            print("4. Delete Entry")
+            print("5. Save Entry")
+            print("6. Exit")
+            choice = input("Enter your choice: ")
+
+            if choice == '1':
+                self.create_entry()
+            elif choice == '2':
+                self.view_entry()
+            elif choice == '3':
+                self.edit_entry()
+            elif choice == '4':
+                self.delete_entry()
+            elif choice == '5':
+                self.save_entries_to_file()
+            elif choice == '6':
+                print("Exiting Diary Application")
+                break
+            else:
+                print("Invalid choice. Please try again")
+
+if __name__ == "__main__":
+    diary = Diary()
+    diary.run()
+
+
+
+

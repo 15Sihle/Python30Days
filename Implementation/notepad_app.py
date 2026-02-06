@@ -48,23 +48,23 @@ class Notepad:
                 file.write(f"Content: {note['content']}\n")
                 file.write("\n")
 
-    # def load_notes_from_file(self):
-    #     if os.path.isfile("notes.txt"):
-    #         with open("notes.txt", "r") as file:
-    #             lines = file.readlines()
-    #             note_info = {}
-    #             for line in lines:
-    #                 if line.strip() == "":
-    #                     if note_info:
-    #                         self.notes.append(note_info)
-    #                         note_info = {}
-    #                 else:
-    #                     key, value = line.strip().split(": ")
-    #                     note_info[key.lower()] = value
-    #             if note_info:
-    #                 self.notes.append(note_info)
-    #     else:
-    #         print("No notes file found.")
+    def load_notes_from_file(self):
+        if os.path.isfile("notes.txt"):
+            with open("notes.txt", "r") as file:
+                lines = file.readlines()
+                note_info = {}
+                for line in lines:
+                    if line.strip() == "":
+                        if note_info:
+                            self.notes.append(note_info)
+                            note_info = {}
+                    else:
+                        key, value = line.strip().split(": ")
+                        note_info[key.lower()] = value
+                if note_info:
+                    self.notes.append(note_info)
+        else:
+            print("No notes file found.")
 
     def run(self):
         self.load_notes_from_file()
