@@ -16,3 +16,13 @@ class Diary:
             for entry in self.entries:
                 print(f"Date: {entry['date']}")
 
+    def edit_entry(self):
+        entry_date = input("Enter the date of the entry you want to edit")
+        for entry in self.entries:
+            if entry['date'] == entry_date:
+                new_content = input(f"Enter new content for entry {entry_date}: ")
+                entry['content'] == new_content
+                print(f"Entry {entry_date} has been edited")
+                return
+        print(f"No entry found with date {entry_date} ")
+
