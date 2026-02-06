@@ -35,3 +35,10 @@ class Diary:
                 return
         print(f"No entry found with date {entry_date}")
 
+    def save_entries_to_file(self):
+        with open("entries.txt", "w") as file:
+            for entry in self.entries:
+                file.write(f"Date: {entry['date']}\n")
+                file.write(f"Title: {entry['content']}\n")
+                file.write("\n")
+
